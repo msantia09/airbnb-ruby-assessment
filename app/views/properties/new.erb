@@ -1,0 +1,32 @@
+<div>
+	<br>
+	<h2><%= @flash %></h2>
+	<br>
+</div>
+
+	<div>
+		<h2> Add a Property </h2>
+		<form action="/properties" method="post">
+			<input type="text" size="80" placeholder="Title" name="property[title]"><br>
+			<select required name="property[prop_type]">
+			  <option value="">Property Type</option>
+			  <option value="house">House</option>
+			  <option value="apartment">Apartment</option>
+			  <option value="room">Room</option>
+			</select><br>
+
+			<select required name="property[room_type]">
+			  <option value="">Room Type</option>
+			  <option value="entire">Entire Home/Apt</option>
+			  <option value="private">Private Room</option>
+			  <option value="shared">Shared Room</option>
+			</select><br>
+
+			<input type="text" placeholder="Number of bedrooms" name="property[no_bed]"><br>
+			<input type="text" placeholder="Fits number of guests" name="property[no_guest]"><br><br>
+			RM <input type="text" placeholder="Price (in RM)" name="property[price]"><br><br>
+			<input type="submit" value="ADD">
+		</form>
+
+	</div>
+

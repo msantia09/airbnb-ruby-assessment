@@ -1,0 +1,25 @@
+<form action="/properties/<%= @property.id%>/edit" method="post">
+	<input type="text" size="80" name="property[title]" value="<%=@property.title%>">
+
+	<select name="property[prop_type]">
+	  <option value="<%@property.prop_type%>"><%=@property.prop_type%></option>
+	  <option value="house">House</option>
+	  <option value="apartment">Apartment</option>
+	  <option value="room">Room</option>
+	</select><br>
+
+	<select name="property[room_type]">
+	  <option value="<%@property.room_type%>"><%=@property.room_type%></option>
+	  <option value="entire">Entire Home/Apt</option>
+	  <option value="private">Private Room</option>
+	  <option value="shared">Shared Room</option>
+	</select><br>
+
+	<input type="text" placeholder="Number of bedrooms" name="property[no_bed]" value="<%=@property.no_bed%>"><br>
+
+	<input type="text" placeholder="Fits number of guests" name="property[no_guest]" value="<%=@property.no_guest%>"><br><br>
+
+	RM <input type="text" placeholder="Price (in RM)" name="property[price]" value="<%=@property.price%>"><br><br>
+	<button>Edit</button>
+</form>
+

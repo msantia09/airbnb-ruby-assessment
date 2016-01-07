@@ -1,0 +1,38 @@
+<br>
+<h2> Properties </h2>
+<br>
+<hr>
+
+<div>
+	<form action="/properties/new" method="get">
+	      <button>Add a Property</button>
+	</form>
+</div>
+
+<div>
+	<% if @all_properties.any? %><br>
+	<ul>
+		<% @all_properties.each do |property| %>
+			<li>
+				<div>
+					<a id="item" href="/properties/<%= property.id%>"><%= property.title %></a>
+				</div>
+				<small>by <%= property.user.firstname %></small>
+			</li><br>		
+
+			<form  action="/properties/<%= property.id%>/pre-edit" method="post">
+				<button>Edit Property</button>
+			</form>
+
+			<form action="/properties/<%= property.id %>" method="delete">
+				<button>Delete Property</button>
+			</form>
+
+			<form action="/properties/<%= property.id %>/bookings/new<%= property.id %>" method="get">
+	      		<button>Book a Property</button>
+			</form>
+
+		<% end %>
+	</ul>
+	<%end%>
+</div>
